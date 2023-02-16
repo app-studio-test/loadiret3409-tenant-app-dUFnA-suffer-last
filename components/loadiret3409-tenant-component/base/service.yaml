@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dotnet-deploy
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: loadiret3409-tenant-component
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: loadiret3409-tenant-component
+    app.kubernetes.io/part-of: loadiret3409-tenant-app
+  name: loadiret3409-tenant-component
+  namespace: loadiret3409-tenant
+spec:
+  ports:
+  - name: http-8081
+    port: 8081
+    protocol: TCP
+    targetPort: 8081
+  selector:
+    app: devfile-dotnet-deploy
+    app.kubernetes.io/instance: loadiret3409-tenant-component
+  type: LoadBalancer
+status:
+  loadBalancer: {}

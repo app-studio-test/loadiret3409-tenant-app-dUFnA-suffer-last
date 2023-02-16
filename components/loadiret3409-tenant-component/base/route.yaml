@@ -1,0 +1,21 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: loadiret3409-tenant-component
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: loadiret3409-tenant-component
+    app.kubernetes.io/part-of: loadiret3409-tenant-app
+  name: loadiret3409-tenant-component
+  namespace: loadiret3409-tenant
+spec:
+  path: /
+  port:
+    targetPort: 8081
+  to:
+    kind: Service
+    name: loadiret3409-tenant-component
+    weight: null
+status: {}
